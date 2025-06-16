@@ -1,0 +1,28 @@
+party-planner/
+├─ .env                  # environment variables (API keys, DB URL)
+├─ package.json          # lists dependencies & scripts; “main” points to your server entry
+├─ README.md
+│
+├─ client/               # your front-end app (e.g. React, Vue)
+│  ├─ public/            # static assets (index.html, images)
+│    ├─ index.html       # intro to page
+│    ├─ define.html      # define name of person 
+│  └─ src/
+│     ├─ index.js        # front-end “main” entry (hooked into public/index.html)
+│     ├─ App.js          # root component
+│     ├─ components/     # UI pieces (Form, SongList, PartyCard…)
+│     ├─ services/       # e.g. spotify-search.js, party-api.js
+│     └─ styles/         # CSS or Sass files
+│
+└─ server/               # your back-end (e.g. Express, Koa, Fastify)
+   ├─ src/
+   │  ├─ index.js        # server “main” entry (reads .env, spins up HTTP listener)
+   │  ├─ routes/         # express routers (party.js, auth.js)
+   │  ├─ controllers/    # business logic (createParty(), addSong(), makePlaylist())
+   │  ├─ models/         # DB schemas (Party, Song)
+   │  ├─ services/       # wrappers for Spotify API, email, etc.
+   │  └─ middleware/     # auth, error-handling, logging
+   ├─ config/
+   │  ├─ db.js           # connects to PostgreSQL / MongoDB
+   │  └─ spotify.js      # sets up Spotify OAuth client
+   └─ package.json       # server-only deps & scripts

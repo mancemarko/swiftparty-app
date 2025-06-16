@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Colas party </title>
+    <style>
+        body {
+            background-color: black;
+        }
+        h1 {
+            text-align: center;
+            color: beige;
+            padding-top: 5px;
+        }
+        p {
+            text-align: center;
+            color: beige;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        label {
+            color: white;
+            display: inline-block;
+            position: relative;
+        }
+        input[type="text"] {
+            position: absolute;
+            display: flex;
+            margin-top: 2px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        input[type="button"] {
+            align-items: center;
+            margin-top: 30px;
+            width: 10%;
+        }
+    </style>
+</head>
+<body>
+    <h1> Celebrating 21 and graduation! </h1>
+    <form>
+        <label>To continue, please type in your name: 
+            <input type="text" id="guestName">
+        </label>
+        <input type="button" value="continue" id="continueBtn">
+        <p id="errMSG"></p>
+    </form>
+    <script src="./assets/define.js"></script>
+</body>
+
+</html>
