@@ -1,40 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">    
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" 
-    content="width=device-width, initial-scale=1.0, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
-    />
-    <title> Colas party </title>
-    <style>
-        body{
-            background-color: #000;
-            background-image: url('/client/public/assets/gatsby_background.jpg') ;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: contain;
-            background-attachment: fixed;
-        }
-        html, body{
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            box-sizing: border-box;
-        }
-        h1{
-            text-align: center;
-            color: beige;
-            padding-top: 5px;
-        }
-        p{
-            text-align: center;
-            color: white;
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>SwiftParty</title>
+    <link rel="stylesheet" href="./css/style.css">
 </head>
+<body>
+    <h1>🎉 SwiftParty 🎉</h1>
+    <p class="subtitle">Plan the playlist and the spread together — one link for everyone.</p>
 
-<body onclick="location.href='define.html'" style="cursor: pointer;">
-    <h1> GREAT GATSBY PARTY </h1>
-    <p> You have been invited, please click on the image to continue </p>
+    <div class="card">
+        <h2>Host a party</h2>
+        <p style="text-align:center; color:#ccc;">Create a party, get a shareable link, and collect songs and wishlist votes from your guests.</p>
+        <div class="center">
+            <a href="host-create.html" class="link-btn">Create a New Party</a>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>Have an invite?</h2>
+        <form id="joinForm">
+            <div class="form-group">
+                <label for="partyCode">Enter the party code</label>
+                <input type="text" id="partyCode" name="partyCode" placeholder="e.g. 7F3KQP" required>
+            </div>
+            <div class="center">
+                <button type="submit">Go to Party</button>
+            </div>
+        </form>
+        <p id="joinError" class="message error"></p>
+    </div>
+
+    <script>
+        document.getElementById('joinForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const code = document.getElementById('partyCode').value.trim().toUpperCase();
+            const errEl = document.getElementById('joinError');
+            if (!code) {
+                errEl.textContent = 'Please enter a party code.';
+                return;
+            }
+            errEl.textContent = '';
+            window.location.href = `/p/${encodeURIComponent(code)}`;
+        });
+    </script>
 </body>
 </html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Host Dashboard - SwiftParty</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <h1 id="partyTitle">Host Dashboard</h1>
+    <p id="partyTheme" class="subtitle"></p>
+
+    <div id="tokenPrompt" class="card" style="display:none;">
+        <h2>Enter your host token</h2>
+        <p style="text-align:center; color:#ccc;">We couldn't find your host token on this device. Paste the one you saved when you created this party.</p>
+        <div class="form-group">
+            <input type="text" id="hostTokenInput" placeholder="Host token">
+        </div>
+        <div class="center">
+            <button id="hostTokenSubmit">Continue</button>
+        </div>
+    </div>
+
+    <div id="dashboardContent" style="display:none;">
+        <div class="card">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <span id="statusBadge" class="meta"></span>
+                <button id="cancelPartyBtn" class="danger">Cancel Party</button>
+            </div>
+            <h2>Share this party</h2>
+            <div class="share-box">
+                <input type="text" id="shareUrl" readonly>
+                <button id="copyBtn">Copy</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>🎵 Spotify</h2>
+            <div id="spotifyDisconnected">
+                <p style="text-align:center; color:#ccc;">Connect your Spotify account to generate a real playlist from submitted songs.</p>
+                <form id="spotifyLoginForm" method="POST" action="/api/spotify/login">
+                    <input type="hidden" name="partyCode" id="spotifyPartyCode">
+                    <input type="hidden" name="hostToken" id="spotifyHostToken">
+                    <div class="center">
+                        <button type="submit">Connect Spotify</button>
+                    </div>
+                </form>
+            </div>
+            <div id="spotifyConnected" style="display:none;">
+                <p style="text-align:center; color:#ccc;">Spotify connected. Generate or refresh the playlist any time — it only adds new songs.</p>
+                <div class="center">
+                    <button id="syncBtn">Generate / Sync Playlist</button>
+                </div>
+                <p id="syncMessage" class="message"></p>
+                <p class="center"><a id="playlistLink" href="#" target="_blank" class="link-btn" style="display:none;">Open Playlist</a></p>
+            </div>
+            <p id="spotifyStatusMessage" class="message"></p>
+        </div>
+
+        <div class="card">
+            <h2>🍹 Wishlist</h2>
+            <form id="wishlistForm">
+                <div class="form-group">
+                    <label for="itemType">Type</label>
+                    <select id="itemType">
+                        <option value="drink">Drink</option>
+                        <option value="food">Food</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="itemName">Name</label>
+                    <input type="text" id="itemName" placeholder="e.g. Margaritas" required>
+                </div>
+                <div class="form-group">
+                    <label for="itemDescription">Description (optional)</label>
+                    <input type="text" id="itemDescription" placeholder="e.g. Classic lime, salted rim">
+                </div>
+                <div class="center">
+                    <button type="submit">Add to Wishlist</button>
+                </div>
+            </form>
+            <p id="wishlistMessage" class="message"></p>
+            <div id="wishlistContainer"></div>
+        </div>
+
+        <div class="card">
+            <h2>🎧 Submitted Songs</h2>
+            <div id="songsContainer"></div>
+        </div>
+
+        <div class="card">
+            <h2>👥 Guests</h2>
+            <div id="guestsContainer"></div>
+        </div>
+    </div>
+
+    <div class="center">
+        <a href="index.html" class="back-btn">← Back</a>
+    </div>
+
+    <script src="./js/api.js"></script>
+    <script src="./js/host-dashboard.js"></script>
+</body>
+</html>

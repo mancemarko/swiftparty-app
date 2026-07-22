@@ -1,7 +1,7 @@
 {
     "scripts": {
-        "start": "node server/src/index.js",
-        "dev": "nodemon --watch server/src --exec \"node server/src/index.js\""
+        "start": "node server/server.js",
+        "dev": "nodemon --watch server --exec \"node server/server.js\""
     },
     "devDependencies": {
         "nodemon": "^3.1.10"

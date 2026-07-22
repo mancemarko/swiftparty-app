@@ -1,0 +1,172 @@
+body {
+    background-color: #000;
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+h1 {
+    text-align: center;
+    color: beige;
+    margin-bottom: 10px;
+}
+h2 {
+    color: beige;
+    text-align: center;
+    margin-bottom: 20px;
+}
+p.subtitle {
+    text-align: center;
+    color: #ccc;
+    margin-bottom: 30px;
+}
+.card {
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+    background-color: #1a1a1a;
+    padding: 20px;
+    border-radius: 10px;
+}
+.form-group {
+    margin-bottom: 15px;
+}
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: beige;
+    font-weight: bold;
+}
+input[type="text"], textarea, select {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: white;
+    color: black;
+    box-sizing: border-box;
+    font-family: inherit;
+}
+input[type="text"]:focus, textarea:focus, select:focus {
+    outline: none;
+    border-color: #4CAF50;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.3);
+}
+button, input[type="button"], input[type="submit"] {
+    padding: 12px 24px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+button:hover, input[type="button"]:hover {
+    background-color: #45a049;
+}
+button:disabled, input:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+button.secondary {
+    background-color: #444;
+}
+button.secondary:hover {
+    background-color: #333;
+}
+button.danger {
+    background-color: #a33;
+}
+button.danger:hover {
+    background-color: #822;
+}
+.list-item {
+    background-color: #333;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+.list-item .meta {
+    color: #ccc;
+    font-size: 14px;
+}
+.message {
+    min-height: 20px;
+    margin-top: 10px;
+    text-align: center;
+}
+.message.error { color: #ff6b6b; }
+.message.success { color: #4CAF50; }
+.message.loading { color: #ccc; }
+.back-btn, .link-btn {
+    display: inline-block;
+    text-align: center;
+    padding: 10px 20px;
+    background-color: beige;
+    color: black;
+    text-decoration: none;
+    border-radius: 5px;
+}
+.back-btn:hover, .link-btn:hover {
+    background-color: #e6e6b8;
+}
+.center {
+    text-align: center;
+    margin-top: 20px;
+}
+.share-box {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    background: #222;
+    padding: 10px;
+    border-radius: 5px;
+}
+.share-box input {
+    flex: 1;
+}
+.tabs {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.tabs button {
+    background-color: #333;
+}
+.tabs button.active {
+    background-color: #4CAF50;
+}
+.vote-btn {
+    background-color: #333;
+    min-width: 90px;
+}
+.vote-btn.voted {
+    background-color: #4CAF50;
+}
+.track-result {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #333;
+    margin: 8px 0;
+    padding: 10px;
+    border-radius: 5px;
+}
+.track-result img {
+    width: 48px;
+    height: 48px;
+    border-radius: 4px;
+}
+.track-info {
+    flex: 1;
+}
+.track-info .title { color: beige; }
+.track-info .artist { color: #ccc; font-size: 14px; }

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create a Party - SwiftParty</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <h1>Create a Party</h1>
+
+    <div class="card">
+        <form id="createForm">
+            <div class="form-group">
+                <label for="partyName">Party name</label>
+                <input type="text" id="partyName" name="partyName" placeholder="e.g. Cola's Graduation Bash" required>
+            </div>
+            <div class="form-group">
+                <label for="partyTheme">Theme (optional)</label>
+                <input type="text" id="partyTheme" name="partyTheme" placeholder="e.g. Great Gatsby">
+            </div>
+            <div class="center">
+                <button type="submit" id="createBtn">Create Party</button>
+            </div>
+        </form>
+        <p id="createMessage" class="message"></p>
+    </div>
+
+    <div class="center">
+        <a href="index.html" class="back-btn">← Back</a>
+    </div>
+
+    <script src="./js/api.js"></script>
+    <script src="./js/host-create.js"></script>
+</body>
+</html>

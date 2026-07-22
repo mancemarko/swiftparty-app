@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Party - SwiftParty</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <h1 id="partyTitle">SwiftParty</h1>
+    <p id="partyTheme" class="subtitle"></p>
+
+    <div id="notFound" class="card" style="display:none;">
+        <p style="text-align:center;">This party could not be found. Double check the link you were given.</p>
+    </div>
+
+    <div id="endedSection" class="card" style="display:none;">
+        <p style="text-align:center;">⏹ This party has ended. Voting and song submissions are closed.</p>
+    </div>
+
+    <div id="joinSection" class="card" style="display:none;">
+        <h2>Join this party</h2>
+        <form id="joinForm">
+            <div class="form-group">
+                <label for="guestName">To continue, please type in your name:</label>
+                <input type="text" id="guestName" name="guestName" placeholder="Enter your name" required>
+            </div>
+            <div class="center">
+                <button type="submit" id="joinBtn">Continue</button>
+            </div>
+        </form>
+        <p id="joinMessage" class="message"></p>
+    </div>
+
+    <div id="mainSection" style="display:none;">
+        <p class="subtitle" id="welcomeMessage"></p>
+
+        <div class="card">
+            <h2>🍹 Vote on the Wishlist</h2>
+            <div id="wishlistContainer"></div>
+
+            <h2 style="margin-top:30px;">Suggest a drink or food</h2>
+            <form id="suggestForm">
+                <div class="form-group">
+                    <label for="suggestType">Type</label>
+                    <select id="suggestType">
+                        <option value="drink">Drink</option>
+                        <option value="food">Food</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="suggestName">Name</label>
+                    <input type="text" id="suggestName" placeholder="e.g. Mojitos" required>
+                </div>
+                <div class="form-group">
+                    <label for="suggestDescription">Description (optional)</label>
+                    <input type="text" id="suggestDescription" placeholder="e.g. With fresh mint">
+                </div>
+                <div class="center">
+                    <button type="submit" id="suggestBtn">Suggest to Host</button>
+                </div>
+            </form>
+            <p id="suggestMessage" class="message"></p>
+        </div>
+
+        <div class="card">
+            <h2>🎵 Add a Song</h2>
+            <form id="searchForm">
+                <div class="form-group">
+                    <input type="text" id="searchInput" placeholder="Search for a song or artist">
+                </div>
+                <div class="center">
+                    <button type="submit">Search</button>
+                </div>
+            </form>
+            <p id="searchMessage" class="message"></p>
+            <div id="searchResults"></div>
+
+            <h2 style="margin-top:30px;">Submitted so far</h2>
+            <div id="songsContainer"></div>
+        </div>
+    </div>
+
+    <div class="center">
+        <a href="/index.html" class="back-btn">← Back to SwiftParty</a>
+    </div>
+
+    <script src="/js/api.js"></script>
+    <script src="/js/party.js"></script>
+</body>
+</html>
